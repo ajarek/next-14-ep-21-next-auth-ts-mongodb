@@ -9,13 +9,13 @@ import { Button } from "@/components/ui/button";
 const Register = () => {
   const [error, setError] = useState("");
   const router = useRouter();
-  // const { data: session, status: sessionStatus } = useSession();
+  const { data: session, status: sessionStatus } = useSession();
 
-  // useEffect(() => {
-  //   if (sessionStatus === "authenticated") {
-  //     router.replace("/dashboard");
-  //   }
-  // }, [sessionStatus, router]);
+  useEffect(() => {
+    if (sessionStatus === "authenticated") {
+      router.replace("/dashboard");
+    }
+  }, [sessionStatus, router]);
 
   const isValidEmail = (email: string) => {
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
