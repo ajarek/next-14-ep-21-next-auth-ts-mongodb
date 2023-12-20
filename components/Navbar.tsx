@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/navigation-menu'
 import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import Link from 'next/link'
+import { ModeToggle } from './mode-toglgle'
 
 const Navbar = () => {
   return (
@@ -55,6 +56,7 @@ const Navbar = () => {
           Register
             </NavigationMenuLink>
         </Link>
+        <ModeToggle/>
      
     </NavigationMenu>
   )

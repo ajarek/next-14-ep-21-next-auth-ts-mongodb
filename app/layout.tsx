@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import SessionProvider from "@/utils/SessionProvider"
 import { getServerSession } from "next-auth"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,10 +22,17 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
       <SessionProvider session={session}>
         <Navbar/>
         {children}
         </SessionProvider>
+        </ThemeProvider>
         </body>
     </html>
   )
