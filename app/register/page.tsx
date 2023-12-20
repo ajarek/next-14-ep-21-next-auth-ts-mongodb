@@ -83,7 +83,7 @@ const Register = () => {
             />
             <Button
               type="submit"
-              
+              className="hover:bg-orange-700"
             >
               {" "}
               Register
