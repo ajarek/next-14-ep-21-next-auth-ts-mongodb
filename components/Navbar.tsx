@@ -13,8 +13,10 @@ import {
 import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import Link from 'next/link'
 import { ModeToggle } from './mode-toglgle'
-
+import { signOut, useSession } from "next-auth/react";
+import { Button } from './ui/button'
 const Navbar = () => {
+  const { data: session }: any = useSession();
   return (
     <NavigationMenu className='px-4 py-2 border-b-2'>
      
@@ -38,6 +40,8 @@ const Navbar = () => {
           Dashboard
             </NavigationMenuLink>
         </Link>
+        {!session ? (
+          <>
         <Link
           href='/login'
           legacyBehavior
@@ -56,6 +60,20 @@ const Navbar = () => {
           Register
             </NavigationMenuLink>
         </Link>
+        </>
+        ):( <>
+          {session.user?.email}
+         
+            <Button
+              onClick={() => {
+                signOut();
+              }}
+              className="p-2 px-5   rounded-full"
+            >
+              Logout
+            </Button>
+          
+        </>)}
         <ModeToggle/>
      
     </NavigationMenu>

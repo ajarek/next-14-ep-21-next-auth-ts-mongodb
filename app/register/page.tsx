@@ -36,36 +36,36 @@ const Register = () => {
       return;
     }
 
-    // try {
-    //   const res = await fetch("/api/register", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       email,
-    //       password,
-    //     }),
-    //   });
-    //   if (res.status === 400) {
-    //     setError("This email is already registered");
-    //   }
-    //   if (res.status === 200) {
-    //     setError("");
-    //     router.push("/login");
-    //   }
-    // } catch (error) {
-    //   setError("Error, try again");
-    //   console.log(error);
-    // }
+    try {
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+      if (res.status === 400) {
+        setError("This email is already registered");
+      }
+      if (res.status === 200) {
+        setError("");
+        router.push("/login");
+      }
+    } catch (error) {
+      setError("Error, try again");
+      console.log(error);
+    }
   };
 
-  // if (sessionStatus === "loading") {
-  //   return <h1>Loading...</h1>;
-  // }
+  if (sessionStatus === "loading") {
+    return <h1>Loading...</h1>;
+  }
 
   return (
-    // sessionStatus !== "authenticated" &&
+    sessionStatus !== "authenticated" &&
      (
       <div className="flex min-h-screen flex-col items-center justify-between p-24">
         <div className="bg-[#212121] p-8 rounded shadow-md w-96">
