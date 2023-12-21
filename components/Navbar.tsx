@@ -1,24 +1,20 @@
 'use client'
+
 import React from 'react'
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from '@/components/ui/navigation-menu'
 import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import Link from 'next/link'
 import { ModeToggle } from './mode-toglgle'
 import { signOut, useSession } from "next-auth/react";
 import { Button } from './ui/button'
+
 const Navbar = () => {
   const { data: session }: any = useSession();
   return (
-    <NavigationMenu className='px-4 py-2 border-b-2'>
+    <NavigationMenu className='max-w-6xl mx-auto px-4 py-2 border-b-2'>
      
         <Link
           href='/'
@@ -62,7 +58,7 @@ const Navbar = () => {
         </Link>
         </>
         ):( <>
-          {session.user?.email}
+          
          
             <Button
               onClick={() => {
