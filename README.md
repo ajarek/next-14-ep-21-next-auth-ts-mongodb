@@ -1,5 +1,12 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+
+<img width="150" alt="Zrzut ekranu 2023-12-21 214316" src="https://github.com/ajarek/next-14-ep-21-next-auth-ts-mongodb/assets/61388692/65fbd511-6507-4b44-8ae0-a515719a1926">
+<img width="150" alt="Zrzut ekranu 2023-12-21 214341" src="https://github.com/ajarek/next-14-ep-21-next-auth-ts-mongodb/assets/61388692/9dd04eaa-49f3-4535-9af0-a740e88dbc11">
+<img width="150" alt="Zrzut ekranu 2023-12-21 214643" src="https://github.com/ajarek/next-14-ep-21-next-auth-ts-mongodb/assets/61388692/1a2bf13f-1c5b-4042-9904-16886ec6e75b">
+
+
 ## Getting Started
 
 First, run the development server:
@@ -13,6 +20,7 @@ pnpm dev
 # or
 bun dev
 ```
+.env : MONGO_URL="your database data"
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
